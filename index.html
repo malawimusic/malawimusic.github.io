@@ -140,6 +140,456 @@ body {
     height: 400px;
   }
 }
+
+
+
+/* RECENT SONGS */
+.recent-songs {
+  padding: 20px;
+  background: white;
+}
+
+.recent-songs h2 {
+  text-align: center;
+  color: #ff0033;
+  margin-bottom: 20px;
+}
+
+/* CONTAINER */
+.recent-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* CARD */
+.recent-card {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* IMAGE */
+.recent-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* INFO */
+.recent-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.recent-info h3 {
+  margin-bottom: 10px;
+}
+
+.recent-info audio {
+  width: 100%;
+}
+
+/* HOVER EFFECT */
+.recent-card:hover {
+  background: #222;
+  transition: 0.3s;
+}
+
+
+
+/* CATEGORIES */
+.categories {
+  padding: 20px;
+  background: #FFFDD0; /*#0a0a0a;*/
+}
+
+.categories h2 {
+  text-align: center;
+  color: #f5c518;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* CARD */
+.category-card {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* DARK OVERLAY */
+.category-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* TEXT ABOVE OVERLAY */
+.category-card h3 {
+  position: relative;
+  z-index: 2;
+}
+
+/* BACKGROUNDS */
+.hiphop {
+  background: url('images/10.png') center/cover;
+}
+
+.dancehall {
+  background: url('images/11.png') center/cover;
+}
+
+.gospel {
+  background: url('images/12.png') center/cover;
+}
+
+.local {
+  background: url('images/13.png') center/cover;
+}
+
+/* HOVER EFFECT */
+.category-card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
+/* TRENDING */
+.trending {
+  padding: 0px;
+  background: white;
+}
+
+.trending h2 {
+  text-align: center;
+  color: #ff0033;
+  margin-bottom: 20px;
+}
+
+/* CONTAINER */
+.trending-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* TRACK CARD */
+.track {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+/* RANK */
+.rank {
+  font-size: 1.5rem;
+  color: #f5c518;
+  font-weight: bold;
+  width: 40px;
+}
+
+/* IMAGE */
+.track img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* INFO */
+.track-info {
+  flex: 1;
+}
+
+.track-info h3 {
+  margin-bottom: 5px;
+}
+
+.track-info audio {
+  width: 100%;
+}
+
+/* HOVER EFFECT */
+.track:hover {
+  background: #222;
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .track {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .track img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .rank {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+/* FEATURED ARTIST */
+.featured {
+  padding: 30px;
+  background: white;
+}
+
+.featured h2 {
+  text-align: center;
+  color: #f5c518;
+  margin-bottom: 20px;
+}
+
+/* CONTAINER */
+.featured-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* IMAGE */
+.featured-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* INFO */
+.featured-info {
+  flex: 1;
+}
+
+.featured-info h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ff0033;
+}
+
+.featured-info p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.featured-info audio {
+  width: 100%;
+}
+
+/* HOVER EFFECT */
+.featured-image img:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .featured-container {
+    flex-direction: column;
+  }
+
+  .featured-image img {
+    width: 100%;
+    height: 250px;
+  }
+
+  .featured-info {
+    text-align: center;
+  }
+}
+
+
+
+
+/* TESTIMONIALS */
+.testimonials {
+  padding: 30px;
+  background: #FFD;
+}
+
+.testimonials h2 {
+  text-align: center;
+  color: #ff0033;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* CARD */
+.testimonial-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* TEXT */
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.testimonial-card h4 {
+  color: #f5c518;
+}
+
+/* HOVER */
+.testimonial-card:hover {
+  background: #222;
+  transform: scale(1.03);
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+/* ARTISTS */
+.artists {
+  padding: 0px;
+  background: white;
+}
+
+.artists h2 {
+  text-align: center;
+  color: #f5c518;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.artists-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* CARD */
+.artist-card {
+  text-align: center;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 0px;
+}
+
+/* IMAGE */
+.artist-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.artist-card h3 {
+  margin: 10px 0 5px;
+}
+
+.artist-card p {
+  color: #ff0033;
+}
+
+/* HOVER */
+.artist-card:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .artists-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
+
+/* CONTACT */
+.contact {
+  padding: 30px;
+  background: white;
+  text-align: center;
+}
+
+.contact h2 {
+  color: #ff0033;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin: 10px 0;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+  margin: 15px 0;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px 15px;
+  background:  white; /*#f5c518;*/
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* HOVER */
+.social-links a:hover {
+  background: #ff0033;
+  color: white;
+  transition: 0.3s;
+}
 </style>
 
 </head>
@@ -317,7 +767,7 @@ body {
     </div>
 
     <div class="song-card">
-      <img src="images/song2.jpg">
+      <img src="images/2.png">
       <div class="overlay">
         <p>Song 2</p>
         <audio controls>
@@ -327,7 +777,7 @@ body {
     </div>
 
     <div class="song-card">
-      <img src="images/song1.jpg">
+      <img src="images/3.png">
       <div class="overlay">
         <p>Song 3</p>
         <audio controls>
@@ -337,7 +787,7 @@ body {
     </div>
 
     <div class="song-card">
-      <img src="images/song2.jpg">
+      <img src="images/4.png">
       <div class="overlay">
         <p>Song 4</p>
         <audio controls>
@@ -347,7 +797,7 @@ body {
     </div>
 
     <div class="song-card">
-      <img src="images/song1.jpg">
+      <img src="images/5.png">
       <div class="overlay">
         <p>Song 5</p>
         <audio controls>
@@ -357,7 +807,7 @@ body {
     </div>
 
     <div class="song-card">
-      <img src="images/song2.jpg">
+      <img src="images/6.png">
       <div class="overlay">
         <p>Song 6</p>
         <audio controls>
@@ -371,48 +821,231 @@ body {
 
 
 
-<section id="hot-songs" class="hot-songs">
-  <br /><br /><br />
-  <h2>🔥 Recent songs</h2>
-  <br /><br /><br />
+<section class="recent-songs">
+  <h2>🆕 Recent Songs</h2>
 
-  <div class="songs-container">
+  <div class="recent-container">
 
-    <div class="song-card">
-      <img src="images/song1.jpg">
-      <div class="overlay">
-        <p>Song 1</p>
+    <div class="recent-card">
+      <img src="images/7.png">
+      <div class="recent-info">
+        <h3>New Song 1</h3>
         <audio controls>
           <source src="music/song1.mp3">
         </audio>
       </div>
     </div>
 
-    <div class="song-card">
-      <img src="images/song2.jpg">
-      <div class="overlay">
-        <p>Song 5</p>
+    <div class="recent-card">
+      <img src="images/8.png">
+      <div class="recent-info">
+        <h3>New Song 2</h3>
         <audio controls>
-          <source src="music/song5.mp3">
+          <source src="music/song2.mp3">
         </audio>
       </div>
     </div>
 
-    <div class="song-card">
-      <img src="images/song1.jpg">
-      <div class="overlay">
-        <p>Song 6</p>
+    <div class="recent-card">
+      <img src="images/9.png">
+      <div class="recent-info">
+        <h3>New Song 3</h3>
         <audio controls>
-          <source src="music/song6.mp3">
+          <source src="music/song3.mp3">
         </audio>
       </div>
     </div>
-<br /><br /><br />
+<br /><br /><br /><br />
   </div>
 </section>
 
-    <!-- youtube_video_area  -->
-    <div class="youtube_video_area">
+
+
+
+<section class="categories">
+<br /><br /><br />
+  <h2>🎵 Music Categories</h2>
+<br /><br />
+  <div class="categories-container">
+
+    <div class="category-card hiphop">
+      <h3>Hip Hop</h3>
+    </div>
+
+    <div class="category-card dancehall">
+      <h3>Dancehall</h3>
+    </div>
+
+    <div class="category-card gospel">
+      <h3>Gospel</h3>
+    </div>
+
+    <div class="category-card local">
+      <h3>Local</h3>
+    </div>
+<br /><br /><br /><br />
+  </div>
+</section>
+
+
+
+<section class="trending">
+<br /><br /><br />
+  <h2>⭐ Top Tracks</h2>
+<br /><br /><br />
+  <div class="trending-container">
+
+    <div class="track">
+      <span class="rank">#1</span>
+      <img src="images/1.png">
+      <div class="track-info">
+        <h3>Top Song 1</h3>
+        <audio controls>
+          <source src="music/song1.mp3">
+        </audio>
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="rank">#2</span>
+      <img src="images/song1.jpg">
+      <div class="track-info">
+        <h3>Top Song 2</h3>
+        <audio controls>
+          <source src="music/song2.mp3">
+        </audio>
+      </div>
+    </div>
+
+    <div class="track">
+      <span class="rank">#3</span>
+      <img src="images/3.png">
+      <div class="track-info">
+        <h3>Top Song 3</h3>
+        <audio controls>
+          <source src="music/song3.mp3">
+        </audio>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="featured">
+<br /><br /><br /><br />
+  <h2>🎤 Featured Artist</h2>
+
+  <div class="featured-container">
+
+    <div class="featured-image">
+      <img src="images/artist-main.jpg">
+    </div>
+
+    <div class="featured-info">
+      <h3>Colonel VK</h3>
+      <p>
+        A powerful voice in the music scene, blending Hip Hop, Gospel,
+        and Afro sounds to create a unique and inspiring experience.
+      </p>
+
+      <audio controls>
+        <source src="music/song1.mp3">
+      </audio>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="testimonials">
+  <h2>❤️ Loved by Listeners</h2>
+
+  <div class="testimonials-container">
+
+    <div class="testimonial-card">
+      <p>"This platform has the best local music vibe. I love it!"</p>
+      <h4>- Hope</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"Amazing songs and clean design. Very easy to use."</p>
+      <h4>- Alex</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <p>"Battlefield Music is my go-to place for new tracks."</p>
+      <h4>- Hannah</h4>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="artists">
+<br /><br /><br /><br />
+  <h2>🎧 Our Artists</h2>
+<br /><br /><br />
+  <div class="artists-container">
+
+    <div class="artist-card">
+      <img src="images/song1.jpg">
+      <h3>Artist One</h3>
+      <p>Hip Hop</p>
+    </div>
+
+    <div class="artist-card">
+      <img src="images/1.png">
+      <h3>Artist Two</h3>
+      <p>Dancehall</p>
+    </div>
+
+    <div class="artist-card">
+      <img src="images/2.png">
+      <h3>Artist Three</h3>
+      <p>Gospel</p>
+    </div>
+
+    <div class="artist-card">
+      <img src="images/3.png">
+      <h3>Artist Four</h3>
+      <p>Afro</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="contact">
+<br /><br /><br /><br />
+  <h2>📞 Connect With Us</h2>
+<br /><br />
+
+  <div class="contact-container">
+
+    <p>Follow Battlefield Music on social media</p>
+
+    <div class="social-links">
+      <a href="#"> <i class="fa fa-facebook"></i> </a>
+      <a href="#"> <i class="fa fa-twitter"></i> </a>
+      <a href="#"> <i class="fa fa-instagram"></i> </a>
+      <a href="#"> <i class="fa fa-whatsapp"></i> </a>
+      <a href="#"> <i class="fa fa-youtube"></i> </a>
+    </div>
+
+    <p>Email: battlefieldmusic@gmail.com</p>
+
+  </div>
+</section>
+
+    <!-- youtube_video_area  --> <!--
+    <div class="youtube_video_area"> 
+<br /><br /><br />
         <div class="container-fluid p-0">
             <div class="row no-gutters">
                 <div class="col-xl-3 col-lg-3 col-md-6">
@@ -493,10 +1126,10 @@ body {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- / youtube_video_area  -->
 
-    <!-- music_area  -->
+    <!-- music_area  --> <!--
     <div class="music_area music_gallery">
         <div class="container">
                 <div class="row">
@@ -619,10 +1252,11 @@ body {
 
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- music_area end  -->
 
-    <!-- gallery -->
+
+    <!-- gallery --> <!--
     <div class="gallery_area">
         <div class="container">
             <div class="row">
@@ -695,10 +1329,10 @@ body {
                     </div>
                 </div>
         </div>
-    </div>
+    </div> -->
     <!--/ gallery -->
 
-    <!-- contact_rsvp -->
+    <!-- contact_rsvp --> <!--
     <div class="contact_rsvp">
         <div class="container">
             <div class="row">
@@ -710,10 +1344,10 @@ body {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--/ contact_rsvp -->
 
-    <!-- footer start -->
+    <!-- footer start --> <!--
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
@@ -784,10 +1418,10 @@ body {
                 <div class="footer_border"></div>
                 <div class="row">
                     <div class="col-xl-7 col-md-6">
-                        <p class="copy_right">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="copy_right">  -->
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> <!--
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> -->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> <!--
                         </p>
                     </div>
                     <div class="col-xl-5 col-md-6">
@@ -804,7 +1438,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <!--/ footer end  -->
 
     <!-- link that opens popup -->
