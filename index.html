@@ -29,100 +29,78 @@
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
 <style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0a0a0a;
+  color: white;
+}
 
-    /* HERO SECTION */
+/* HERO SECTION */
 .hero {
   height: 100vh;
-  background: url('img/artist-main.jpg') center/cover no-repeat;
-  position: relative;
+  background: url('images/artist-main.jpg') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-/* DARK OVERLAY */
 .hero::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.7);
-  top: 0;
-  left: 0;
 }
 
-/* CONTENT */
 .hero-content {
   position: relative;
   text-align: center;
-  color: white;
 }
 
-/* TITLE */
 .hero-content h1 {
   font-size: 3rem;
   color: #ff0033;
-  animation: fadeIn 2s ease;
 }
 
-/* SUBTITLE */
 .hero-content p {
-  font-size: 1.2rem;
   margin: 10px 0;
 }
 
-/* BUTTON */
 .hero-btn {
-  display: inline-block;
-  padding: 10px 20px;
   background: #f5c518;
+  padding: 10px 20px;
   color: black;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+/* HOT SONGS */
+.hot-songs {
+  padding: 0px;
+  background: white;
 }
 
-
-
-
-
-
-
-/* SECTION STYLE */
-.songs-section {
-  padding: 40px;
+.hot-songs h2 {
   text-align: center;
-}
-
-.songs-section h2 {
-  margin-bottom: 20px;
   color: #f5c518;
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
-/* GRID LAYOUT */
+/* GRID */
 .songs-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
 /* SONG CARD */
 .song-card {
   position: relative;
-  width: 350px;
-  border-radius: 15px;
   overflow: hidden;
+  border-radius: 0px;
 }
 
-/* IMAGE */
 .song-card img {
   width: 100%;
   height: 400px;
@@ -130,7 +108,7 @@
 }
 
 /* OVERLAY */
-.song-overlay {
+.overlay {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -138,131 +116,32 @@
   padding: 10px;
 }
 
-/* HOVER EFFECT 🔥 */
-.song-card:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
-}
-
-
-/* CATEGORIES SECTION */
-.categories-section {
-  padding: 40px;
-  text-align: center;
-}
-
-.categories-section h2 {
-  color: #ff0033;
-  margin-bottom: 20px;
-}
-
-/* GRID */
-.categories-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-/* CARD */
-.category-card {
-  width: 1100px;  /* 200 */
-  height: 300px;  /*120 */
-  background: linear-gradient(135deg, #ff0033, #f5c518);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* TEXT */
-.category-card h3 {
-  color: black;
-  font-size: 4rem; /* 1.2rem */
-}
-
-/* HOVER EFFECT 🔥 */
-.category-card:hover {
-  transform: scale(1.1);
-}
-
-
-/* TRENDING SECTION */
-.trending-section {
-  padding: 40px;
-  text-align: center;
-}
-
-.trending-section h2 {
-  color: #f5c518;
-  margin-bottom: 20px;
-}
-
-/* BADGE */
-.badge {
-  display: inline-block;
-  background: #ff0033;
-  color: white;
-  padding: 5px 10px;
-  font-size: 0.8rem;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
-
-/* TRENDING CARD EFFECT */
-.song-card.trending {
-  border: 2px solid #f5c518;
-  box-shadow: 0 0 15px rgba(245,197,24,0.3);
-}
-
-
-
-/* FEATURED ARTIST */
-.featured-artist {
-  padding: 0px; /* 50px */
-  background: 0; /* #111 */
-}
-
-.featured-artist h2 {
-  text-align: center;
-  color: #ff0033;
-  margin-bottom: 30px;
-}
-
-/* CONTAINER */
-.artist-container {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-/* IMAGE */
-.artist-image img {
+.overlay audio {
   width: 100%;
-  max-width: 400px;
-  height: 300px; /* add */
-  border-radius: 0px; /* 15px */
 }
 
-/* TEXT */
-.artist-info {
-  flex: 1;
+/* HOVER EFFECT */
+.song-card:hover {
+  transform: scale(1.03);
+  transition: 0.3s;
 }
 
-.artist-info h3 {
-  font-size: 2rem;
-  color: #f5c518;
-}
+/* MOBILE */
+@media (max-width: 768px) {
+  .songs-container {
+    display: block;
+  }
 
-.artist-info p {
-  margin: 15px 0;
-  line-height: 1.6;
+  .song-card {
+    margin-bottom: 15px;
+  }
+
+  .song-card img {
+    height: 400px;
+  }
 }
 </style>
+
 </head>
 
 <body>
@@ -328,28 +207,7 @@
     </header>
     <!-- header-end -->
 
-    <!-- slider_area_start --> <!--
-    <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center ">
-                            <h3>BattleField Music </h3>
-  			    <p>Where Sound Meets Power</p>
-<section class="hero">
-  <div class="hero-content">
-    <h1>BATTLEFIELD MUSIC</h1>
-    <p>Where Sound Meets Power</p>
-    <a href="#hot-songs" class="hero-btn">🎧 Explore Music</a>
-  </div>
-</section>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  -->
+
 
 <section class="hero">
   <div class="hero-content">
@@ -358,6 +216,25 @@
     <a href="#hot-songs" class="hero-btn">🎧 Explore Music</a>
   </div>
 </section>
+
+
+
+    <!-- slider_area_start --><!--
+    <div class="slider_area">
+        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center ">
+                            <h3>BattleField Music </h3>
+  			    <p>Where Sound Meets Power</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
     <!-- slider_area_end -->
 
     <!-- music_area  --> <!--
@@ -395,89 +272,6 @@
     </div> -->
     <!-- music_area end  -->
 
-<section id="hot-songs" class="songs-section">
-  <br />
-  <h2>🔥 Hot Songs</h2>
-  <br />
-  <br />
-
-  <div class="songs-container">
-
-    <!-- Song 1 -->
-    <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track One</h3>
-        <audio controls>
-          <source src="music/song1.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-
-    <!-- Song 2 -->
-    <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track Two</h3>
-        <audio controls>
-          <source src="music/song2.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-
-    <!-- Song 3 -->
-    <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track Three</h3>
-        <audio controls>
-          <source src="music/song3.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-
-    <!-- Song 4 -->
-    <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track Four</h3>
-        <audio controls>
-          <source src="music/song4.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-
-    <!-- Song 5 -->
-    <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track Five</h3>
-        <audio controls>
-          <source src="music/song5.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-
-    <!-- Song 6 -->
-    <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track Six</h3>
-        <audio controls>
-          <source src="music/song5.mp3" type="audio/mpeg">
-        </audio>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 
 <!-- Hidden Audio Player --> <!--
 <audio id="audio-player"></audio> -->
@@ -502,170 +296,120 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!--/ about_area  -->
 
-<section id="hot-songs" class="songs-section">
-  <br />
-  <br />
-  <h2>🆕 Recent Songs</h2>
-  <br />
-  <br />
+<section id="hot-songs" class="hot-songs">
+  <br /><br /><br />
+  <h2>🔥 Hot Songs</h2>
+  <br /><br /><br />
 
   <div class="songs-container">
 
-    <!-- Song 1 -->
     <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track One</h3>
+      <img src="images/song1.jpg">
+      <div class="overlay">
+        <p>Song 1</p>
         <audio controls>
-          <source src="music/song1.mp3" type="audio/mpeg">
+          <source src="music/song1.mp3">
         </audio>
       </div>
     </div>
 
-    <!-- Song 2 -->
     <div class="song-card">
-      <img src="img/song2.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track Two</h3>
+      <img src="images/song2.jpg">
+      <div class="overlay">
+        <p>Song 2</p>
         <audio controls>
-          <source src="music/song2.mp3" type="audio/mpeg">
+          <source src="music/song2.mp3">
         </audio>
       </div>
     </div>
 
-    <!-- Song 3 -->
     <div class="song-card">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <h3>Track Three</h3>
+      <img src="images/song1.jpg">
+      <div class="overlay">
+        <p>Song 3</p>
         <audio controls>
-          <source src="music/song3.mp3" type="audio/mpeg">
+          <source src="music/song3.mp3">
         </audio>
       </div>
     </div>
 
-  </div>
-</section>
-
-
-<section class="categories-section">
-  <br />
-  <br />
-  <h2>🎵 Categories</h2>
-  <br />
-  <br />
-
-  <div class="categories-container">
-
-    <div class="category-card" onclick="alert('Hip Hop songs coming soon')">
-      <h3>Hip Hop</h3>
+    <div class="song-card">
+      <img src="images/song2.jpg">
+      <div class="overlay">
+        <p>Song 4</p>
+        <audio controls>
+          <source src="music/song4.mp3">
+        </audio>
+      </div>
     </div>
 
-    <div class="category-card">
-      <h3>Dancehall</h3>
+    <div class="song-card">
+      <img src="images/song1.jpg">
+      <div class="overlay">
+        <p>Song 5</p>
+        <audio controls>
+          <source src="music/song5.mp3">
+        </audio>
+      </div>
     </div>
 
-    <div class="category-card">
-      <h3>Gospel</h3>
+    <div class="song-card">
+      <img src="images/song2.jpg">
+      <div class="overlay">
+        <p>Song 6</p>
+        <audio controls>
+          <source src="music/song6.mp3">
+        </audio>
+      </div>
     </div>
-
-    <div class="category-card">
-      <h3>Local</h3>
-    </div>
-
+<br /><br /><br />
   </div>
 </section>
 
 
 
-<section id="trending" class="trending-section">
-  <br />
-  <br />
-  <h2>⭐ Trending Tracks</h2>
-  <br />
-  <br />
+<section id="hot-songs" class="hot-songs">
+  <br /><br /><br />
+  <h2>🔥 Recent songs</h2>
+  <br /><br /><br />
 
   <div class="songs-container">
 
-    <!-- Top Song 1 -->
-    <div class="song-card trending">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <span class="badge">🔥 TOP 1</span>
-        <h3>Hit Track One</h3>
-
+    <div class="song-card">
+      <img src="images/song1.jpg">
+      <div class="overlay">
+        <p>Song 1</p>
         <audio controls>
-          <source src="music/top1.mp3" type="audio/mpeg">
+          <source src="music/song1.mp3">
         </audio>
       </div>
     </div>
 
-    <!-- Top Song 2 -->
-    <div class="song-card trending">
-      <img src="img/song2.jpg" alt="song">
-
-      <div class="song-overlay">
-        <span class="badge">🔥 TOP 2</span>
-        <h3>Hit Track Two</h3>
-
+    <div class="song-card">
+      <img src="images/song2.jpg">
+      <div class="overlay">
+        <p>Song 5</p>
         <audio controls>
-          <source src="music/top2.mp3" type="audio/mpeg">
+          <source src="music/song5.mp3">
         </audio>
       </div>
     </div>
 
-     <!-- Top Song 3 -->
-    <div class="song-card trending">
-      <img src="img/song1.jpg" alt="song">
-
-      <div class="song-overlay">
-        <span class="badge">🔥 TOP 3</span>
-        <h3>Hit Track three</h3>
-
+    <div class="song-card">
+      <img src="images/song1.jpg">
+      <div class="overlay">
+        <p>Song 6</p>
         <audio controls>
-          <source src="music/top2.mp3" type="audio/mpeg">
+          <source src="music/song6.mp3">
         </audio>
       </div>
     </div>
-
+<br /><br /><br />
   </div>
 </section>
-
-
-<section class="featured-artist">
-  <h2>🎤 Featured Artist</h2>
-
-  <div class="artist-container">
-
-    <!-- LEFT: IMAGE -->
-    <div class="artist-image">
-      <img src="img/song1.jpg" alt="artist">
-    </div>
-
-    <!-- RIGHT: INFO -->
-    <div class="artist-info">
-      <h3>Colonel VK</h3>
-      <p>
-        This is a powerful artist known for blending hip hop, gospel, and afro
-        sounds. Their music inspires, entertains, and connects with people
-        from different backgrounds.
-      </p>
-
-      <audio controls>
-        <source src="music/featured.mp3" type="audio/mpeg">
-      </audio>
-    </div>
-
-  </div>
-</section>
-
 
     <!-- youtube_video_area  -->
     <div class="youtube_video_area">
