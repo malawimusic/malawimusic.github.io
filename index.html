@@ -623,7 +623,6 @@ body {
 
 
 
-/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -636,13 +635,11 @@ body {
   z-index: 1000;
 }
 
-/* LOGO */
 .logo {
-  font-weight: bold;
   color: #f5c518;
+  font-weight: bold;
 }
 
-/* MENU */
 .nav-links {
   list-style: none;
   display: flex;
@@ -657,16 +654,14 @@ body {
   text-decoration: none;
 }
 
-/* HAMBURGER */
 .menu-btn {
   display: none;
-  font-size: 20px;
+  font-size: 24px;
   cursor: pointer;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-
   .menu-btn {
     display: block;
   }
@@ -681,14 +676,13 @@ body {
     background: black;
   }
 
+  .nav-links.show {
+    display: flex;
+  }
+
   .nav-links li {
     padding: 10px;
     border-top: 1px solid #333;
-  }
-
-  /* ACTIVE MENU */
-  .nav-links.show {
-    display: flex;
   }
 }
 </style>
@@ -1613,8 +1607,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		
 <script>
 function toggleMenu() {
-  const menu = document.getElementById("nav-menu");
-  menu.classList.toggle("active");
+  document.getElementById("menu").classList.toggle("show");
 }
 </script>
 </body>
