@@ -627,78 +627,67 @@ body {
 .navbar {
   position: sticky;
   top: 0;
-  width: 100%;
   background: black;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px;
   z-index: 1000;
 }
 
 /* LOGO */
 .logo {
-  color: #f5c518;
   font-weight: bold;
-  font-size: 1.2rem;
+  color: #f5c518;
 }
 
 /* MENU */
-.navbar nav a {
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 15px;
+}
+
+.nav-links a {
   color: white;
   text-decoration: none;
-  margin-left: 15px;
-  font-weight: bold;
 }
 
-/* HOVER */
-.navbar nav a:hover {
-  color: #ff0033;
-  transition: 0.3s;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* HAMBURGER BUTTON */
-.menu-toggle {
+/* HAMBURGER */
+.menu-btn {
   display: none;
-  font-size: 1.5rem;
+  font-size: 20px;
   cursor: pointer;
-  color: white;
-}
-
-/* DEFAULT NAV */
-#nav-menu {
-  display: flex;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
 
-  .menu-toggle {
+  .menu-btn {
     display: block;
   }
 
-  #nav-menu {
+  .nav-links {
     display: none;
     flex-direction: column;
+    position: absolute;
+    top: 50px;
+    left: 0;
     width: 100%;
     background: black;
-    position: absolute;
-    top: 60px;
-    left: 0;
+  }
+
+  .nav-links li {
     padding: 10px;
+    border-top: 1px solid #333;
   }
 
-  #nav-menu a {
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-  }
-
-  /* SHOW MENU */
-  #nav-menu.active {
+  /* ACTIVE MENU */
+  .nav-links.show {
     display: flex;
   }
 }
@@ -717,12 +706,14 @@ html {
 <header class="navbar">
   <div class="logo">Battlefield Music</div>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#hot-songs">Tracks</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <ul class="nav-links" id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#hot-songs">Tracks</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </header>
     <header>
         <div class="header-area ">
@@ -1626,7 +1617,6 @@ function toggleMenu() {
   menu.classList.toggle("active");
 }
 </script>
-
 </body>
 
 </html>
