@@ -660,6 +660,48 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* HAMBURGER BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* DEFAULT NAV */
+#nav-menu {
+  display: flex;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: black;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+  }
+
+  #nav-menu a {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  /* SHOW MENU */
+  #nav-menu.active {
+    display: flex;
+  }
+}
 </style>
 
 </head>
@@ -681,7 +723,7 @@ html {
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-</header> <!--
+</header>
     <header>
         <div class="header-area ">
             <div id="sticky-header" class="main-header-area">
@@ -736,7 +778,7 @@ html {
                 </div>
             </div>
         </div>
-    </header> -->
+    </header>
     <!-- header-end -->
 
 
@@ -1577,14 +1619,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <script src="js/main.js"></script>
     
-		<script>
-                $(function() {
-                    $('audio').audioPlayer({
-
-                    });
-                });
-
-            </script>
+		
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("nav-menu");
+  menu.classList.toggle("active");
+}
+</script>
 
 </body>
 
