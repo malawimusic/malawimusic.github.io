@@ -703,6 +703,11 @@ body {
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
   <ul class="nav-links" id="menu">
+     <li><a href="#home" onclick="closeMenu()">Home</a></li>
+     <li><a href="#hot-songs" onclick="closeMenu()">Tracks</a></li>
+     <li><a href="#about" onclick="closeMenu()">About</a></li>
+     <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+  </ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#hot-songs">Tracks</a></li>
     <li><a href="#about">About</a></li>
@@ -1608,6 +1613,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script>
 function toggleMenu() {
   document.getElementById("menu").classList.toggle("show");
+}
+
+function closeMenu() {
+  document.getElementById("menu").classList.remove("show");
 }
 </script>
 </body>
